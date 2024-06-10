@@ -13,6 +13,11 @@ We follow MOF to release the datasets during training, the training scripts, and
 
 ## Environment
 
+To prepare the dataset, it needs to install the following package,
+```
+pip install datasets
+```
+
 
 ## Datasets
 
