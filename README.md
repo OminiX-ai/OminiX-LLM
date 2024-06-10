@@ -43,12 +43,16 @@ It is a better method to load from disk as it does not require online data prepr
 ## Model
 You can download our efficient stable diffusion model from this [link](https://huggingface.co/piuzha/llm_ckpts). It is located on Huggingface with 'piuzha/llm_ckpts'.
 
-## Usage
-
 
 ## Training
 
 We follow the [ColossalAI](https://github.com/hpcaitech/ColossalAI) framework to train the LLM model. Colossal-AI provides a collection of parallel components for the training. It aims to support   to write the distributed deep learning models just like how you write your model on your laptop. It provides user-friendly tools to kickstart distributed training and inference in a few lines. 
+
+
+
+## Inference
+
+
 
 ## Timeline
 
