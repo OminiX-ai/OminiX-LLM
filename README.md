@@ -14,6 +14,16 @@ We follow MOF to release the datasets during training, the training scripts, and
 ## Environment
 
 
+## Datasets
+
+We use the SlimPajama dataset for pretraining. You can download the dataset using Hugging Face datasets:
+```
+from datasets import load_dataset
+ds = load_dataset("cerebras/SlimPajama-627B")
+```
+SlimPajama is the largest extensively deduplicated, multi-corpora, open-source dataset for training large language models. SlimPajama was created by cleaning and deduplicating the 1.2T token RedPajama dataset from Together. By filtering out low quality data and duplicates, it  removes 49.6% of bytes, slimming down the RedPajama dataset from 1210B to 627B tokens.   SlimPajama offers the highest quality and most compute efficient data to train on for runs up to 627B tokens. When upsampled, SlimPajama is expected   to perform equal to or better than RedPajama-1T when training at trillion token scale. 
+
+
 ## Model
 You can download our efficient stable diffusion model from this [link](https://huggingface.co/piuzha/llm_ckpts). It is located on Huggingface with 'piuzha/llm_ckpts'.
 
