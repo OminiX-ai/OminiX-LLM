@@ -32,6 +32,8 @@ Then, you can load the dataset from the local disk,
 ```
 train_10pct_ds = datasets.load_from_disk("Path/to/save")
 ```
+It is a better method to load from disk as it does not require online data preprecessing with simultaneous API calls due to multiple nodes. 
+
 
 ## Model
 You can download our efficient stable diffusion model from this [link](https://huggingface.co/piuzha/llm_ckpts). It is located on Huggingface with 'piuzha/llm_ckpts'.
