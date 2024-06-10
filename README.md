@@ -7,7 +7,7 @@
 
 
 ## Model
-
+You can download our efficient stable diffusion model from this [link](https://huggingface.co/piuzha/llm_ckpts). It is located on Huggingface with 'piuzha/llm_ckpts'.
 
 ## Usage
 
