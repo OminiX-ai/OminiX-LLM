@@ -41,6 +41,10 @@ You can download our efficient stable diffusion model from this [link](https://h
 ## Usage
 
 
+## Training
+
+We follow the [ColossalAI](https://github.com/hpcaitech/ColossalAI) framework to train the LLM model. Colossal-AI provides a collection of parallel components for the training. It aims to support   to write the distributed deep learning models just like how you write your model on your laptop. It provides user-friendly tools to kickstart distributed training and inference in a few lines. 
+
 ## Timeline
 
 
