@@ -18,6 +18,15 @@ To prepare the dataset, it needs to install the following package,
 pip install datasets
 ```
 
+The training is based on ColossalAI. Please install the ColossalAI package.
+```
+BUILD_EXT=1 pip install -U git+https://github.com/hpcaitech/ColossalAI
+```
+Then install other dependencies.
+```
+pip install -r requirements.txt
+```
+
 
 ## Datasets
 
