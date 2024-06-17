@@ -58,6 +58,44 @@ You can download our efficient stable diffusion model from this [link](https://h
 We follow the [ColossalAI](https://github.com/hpcaitech/ColossalAI) framework to train the LLM model. Colossal-AI provides a collection of parallel components for the training. It aims to support   to write the distributed deep learning models just like how you write your model on your laptop. It provides user-friendly tools to kickstart distributed training and inference in a few lines. 
 
 
+For your convenience, we provide some shell scripts to run benchmark with various configurations.
+
+You can find them in 'scripts/benchmark_7B' directory. The main command should be in the format of:
+```
+colossalai run --nproc_per_node YOUR_GPU_PER_NODE --hostfile YOUR_HOST_FILE \
+benchmark.py --OTHER_CONFIGURATIONS
+```
+
+Here we will show an example of how to run training llama pretraining with 'gemini, batch_size=16, sequence_length=4096, gradient_checkpoint=True, flash_attn=True'.
+
+#### a. Running environment
+
+This experiment was performed on 4 computing nodes with 32 L40S GPUs in total for LLaMA-2 7B. The nodes are connected with RDMA and GPUs within one node are fully connected with NVLink. 
+
+#### b. Running command
+
+```bash
+cd scripts/benchmark_7B
+```
+
+First, put your host file (`hosts.txt`) in this directory with your real host ip or host name.
+
+Here is a sample `hosts.txt`:
+```text
+hostname1
+hostname2
+hostname3
+hostname4
+```
+
+Then add environment variables to script if needed.
+
+Finally, run the following command to start training:
+
+```bash
+bash gemini.sh
+```
+
 
 ## Inference
 
