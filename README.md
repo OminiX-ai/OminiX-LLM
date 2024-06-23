@@ -98,10 +98,22 @@ You can download our efficient stable diffusion model from this [link](https://h
 
 We follow the [ColossalAI](https://github.com/hpcaitech/ColossalAI) framework to train the LLM model. Colossal-AI provides a collection of parallel components for the training. It aims to support   to write the distributed deep learning models just like how you write your model on your laptop. It provides user-friendly tools to kickstart distributed training and inference in a few lines. 
 
+We provide a few examples to show how to run benchmark or pretraining based on Colossal-AI. 
 
-For your convenience, we provide some shell scripts to run benchmark with various configurations.
+### 1. Training LLM
 
-You can find them in 'scripts/benchmark_7B' directory. The main command should be in the format of:
+You can find the shell scripts in 'scripts/train_7B' directory. The main command should be in the format of:
+```
+colossalai run --nproc_per_node YOUR_GPU_PER_NODE --hostfile YOUR_HOST_FILE \
+benchmark.py --OTHER_CONFIGURATIONS
+```
+
+
+
+### 2. Benchmark
+
+
+You can find the shell scripts in 'scripts/benchmark_7B' directory. The benchmark mainly test the throughput of the LLM, without actual model training.  The main command should be in the format of:
 ```
 colossalai run --nproc_per_node YOUR_GPU_PER_NODE --hostfile YOUR_HOST_FILE \
 benchmark.py --OTHER_CONFIGURATIONS
