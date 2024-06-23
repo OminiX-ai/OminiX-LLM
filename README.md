@@ -108,6 +108,49 @@ colossalai run --nproc_per_node YOUR_GPU_PER_NODE --hostfile YOUR_HOST_FILE \
 benchmark.py --OTHER_CONFIGURATIONS
 ```
 
+#### a. Running on a sinlge node
+we provide an example to run the training on a single node as below,
+```
+colossalai run --nproc_per_node 1 pretrain.py \
+        --config 7b \
+        --dataset togethercomputer/RedPajama-Data-1T-Sample \
+        --batch_size 1 \
+        --num_epochs 5 \
+        --save_interval 5000 \
+        --max_length 2048 \
+        --save_dir output-checkpoints \
+        --plugin zero2_cpu \
+        --lr 2e-5 \
+        --expanded_model hpcai-tech/Colossal-LLaMA-2-7b-base
+```
+In the example, it uses the sample dataset 'togethercomputer/RedPajama-Data-1T-Sample' for training. It trains the 7B model 'hpcai-tech/Colossal-LLaMA-2-7b-base'. You can refer the main file 'run.sh' and 'pretrain.py' for more details. 
+
+#### b. Running on a sinlge node
+
+we provide an example to run the training on multiple nodes as below,
+```
+srun colossalai run --num_nodes 8 --nproc_per_node 8 pretrain.py \
+        --config 7b \
+        --dataset cerebras/SlimPajama-627B \
+        --batch_size 1 \
+        --num_epochs 10 \
+        --save_interval 50000 \
+        --max_length 2048 \
+        --save_dir output-checkpoints \
+        --flash_attention \
+        --plugin zero2_cpu \
+        --lr 1e-5 \
+        --expanded_model hpcai-tech/Colossal-LLaMA-2-7b-base
+```
+It uses 8 nodes. Put your host file (`hosts.txt`) in this directory with your real host ip or host name.
+Here is a sample `hosts.txt`:
+```text
+hostname1
+hostname2
+hostname3few
+hostname8
+```
+You can refer to   the main file 'run-multi-server.sh' and 'pretrain.py' for more details.
 
 
 ### 2. Benchmark
@@ -137,7 +180,7 @@ Here is a sample `hosts.txt`:
 ```text
 hostname1
 hostname2
-hostname3
+hostname3few
 hostname4
 ```
 
