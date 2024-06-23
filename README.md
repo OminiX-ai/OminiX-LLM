@@ -123,7 +123,10 @@ colossalai run --nproc_per_node 1 pretrain.py \
         --lr 2e-5 \
         --expanded_model hpcai-tech/Colossal-LLaMA-2-7b-base
 ```
-In the example, it uses the sample dataset 'togethercomputer/RedPajama-Data-1T-Sample' for training. It trains the 7B model 'hpcai-tech/Colossal-LLaMA-2-7b-base'. You can refer the main file 'run.sh' and 'pretrain.py' for more details. 
+In the example, it uses the sample dataset 'togethercomputer/RedPajama-Data-1T-Sample' for training. It trains the 7B model 'hpcai-tech/Colossal-LLaMA-2-7b-base'. You can refer the main file 'run.sh' and 'pretrain.py' for more details. To start the training, run the following, 
+```bash
+bash run.sh
+```
 
 #### b. Running on a sinlge node
 
@@ -147,11 +150,15 @@ Here is a sample `hosts.txt`:
 ```text
 hostname1
 hostname2
-hostname3few
+hostname3
+...
 hostname8
 ```
-You can refer to   the main file 'run-multi-server.sh' and 'pretrain.py' for more details.
+You can refer to   the main file 'run-multi-server.sh' and 'pretrain.py' for more details. To start the training, run the following, 
 
+```bash
+bash run-multi-server.sh
+```
 
 ### 2. Benchmark
 
@@ -180,7 +187,7 @@ Here is a sample `hosts.txt`:
 ```text
 hostname1
 hostname2
-hostname3few
+hostname3
 hostname4
 ```
 
