@@ -18,13 +18,43 @@ To prepare the dataset, it needs to install the following package,
 pip install datasets
 ```
 
-The training is based on ColossalAI. Please install the ColossalAI package.
+### Cuda install
+
+We use cuda 11.7. Other cuda versions may also work.
 ```
-BUILD_EXT=1 pip install -U git+https://github.com/hpcaitech/ColossalAI
+get https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
+sudo sh cuda_11.7.0_515.43.04_linux.run    
 ```
-Then install other dependencies.
+
+### install pytorch
+
+We use pytorch 2.0.0. 
+```
+conda create --name llm_train python==3.10
+conda activate llm_train
+pip install torch==2.0.0 torchvision==0.15.1 torchaudio==2.0.1
+```
+
+### install other packages
+
+To install other packages, follow the requirements.txt
 ```
 pip install -r requirements.txt
+```
+
+###  install flash attention
+
+We use flash-attention 2.2.1.
+```
+git clone https://github.com/Dao-AILab/flash-attention.git
+cd flash-attention/
+git checkout a1576ad                ##  flash-attention 2.2.1
+python setup.py  install
+cd ./csrc
+cd fused_dense_lib  && pip install -v .
+cd ../xentropy && pip install -v .
+cd ../rotary && pip install -v .
+cd ../layer_norm && pip install -v .
 ```
 
 
