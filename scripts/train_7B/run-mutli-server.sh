@@ -28,8 +28,7 @@ export NCCL_IB_DISABLE=1
 
 
 cd ../../
-srun /shared/user90/workspace/colossal-ai/ColossalAI/examples/language/llama2/scripts/pretrain/colossalai run --num_nodes 8 --nproc_per_node 8 \
-        /shared/user90/workspace/colossal-ai/ColossalAI/examples/language/llama2/pretrain.py \
+srun colossalai run --num_nodes 8 --nproc_per_node 8 pretrain.py \
         --config 7b \
         --dataset cerebras/SlimPajama-627B \
         --batch_size 1 \
