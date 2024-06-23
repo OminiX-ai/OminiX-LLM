@@ -13,12 +13,13 @@ We follow MOF to release the datasets during training, the training scripts, and
 
 ## Environment
 
+### 1. Dataset config
 To prepare the dataset, it needs to install the following package,
 ```
 pip install datasets
 ```
 
-### Cuda install
+### 2. Cuda install
 
 We use cuda 11.7. Other cuda versions may also work.
 ```
@@ -26,7 +27,7 @@ get https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/c
 sudo sh cuda_11.7.0_515.43.04_linux.run    
 ```
 
-### install pytorch
+### 3. Install pytorch
 
 We use pytorch 2.0.0. 
 ```
@@ -35,14 +36,14 @@ conda activate llm_train
 pip install torch==2.0.0 torchvision==0.15.1 torchaudio==2.0.1
 ```
 
-### install other packages
+### 4. Install other packages
 
 To install other packages, follow the requirements.txt
 ```
 pip install -r requirements.txt
 ```
 
-###  install flash attention
+### 5. Install flash attention
 
 We use flash-attention 2.2.1.
 ```
@@ -59,6 +60,16 @@ cd ../layer_norm && pip install -v .
 
 
 ## Datasets
+
+### 1. Sample dataset
+
+You can do some test on a small dataset, which is a small sample from RedPajama 1T.
+```
+import datasets 
+ds = datasets.load_dataset("togethercomputer/RedPajama-Data-1T-Sample")
+```
+
+### 2. Large dataset
 
 We use the SlimPajama dataset for pretraining. You can download the dataset using Hugging Face datasets:
 ```
