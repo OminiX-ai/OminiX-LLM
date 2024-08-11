@@ -203,6 +203,27 @@ bash gemini.sh
 ## Inference
 
 
+## Evaluation 
+
+We test the performance of our model with [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness). The evaluation results on common datasets are shown below. More results will be released. 
+
+|      models      | HellaSwag | WinoGrade  | PIQA  | Arc-e  | Arc-c  |
+|:----------------:|:-------------:|:-------------:|:--------:|:---------:|:---------:|
+|  Mistral7B v0.1  |     81.06     |     73.95     |   82.26  |   79.42   |   54.01   |
+|  Mistral7B v0.3  |     80.39     |      73.4     |   82.15  |   78.28   |   52.22   |
+|   LLaMA 2 - 7B   |     75.99     |     69.06     |   79.11  |   74.54   |   46.42   |
+|   LLaMA 3 - 8B   |      79.1     |      73.3     |   79.6   |   77.74   |   53.07   |
+|  LLaMA 3.1 - 8B  |     78.92     |     74.19     |   81.12  |   81.06   |   53.67   |
+|   Qwen v1 - 7B   |     76.86     |     68.59     |   78.29  |   71.76   |   46.08   |
+|  Qwen v1.5 - 7B  |     76.85     |      66.3     |   79.33  |   62.37   |   42.92   |
+|   Qwen v2 - 7B   |      78.9     |     72.38     |   79.98  |   74.71   |   50.09   |
+|    gemma - 7b    |     80.45     |     73.72     |   80.9   |   79.97   |    54.1   |
+|  internlm2 - 7b  |     79.27     |     78.77     |   80.09  |   78.07   |   53.07   |
+| internlm2.5 - 7b |     79.14     |      77.9     |   80.52  |   76.16   |   51.37   |
+|   Baichuan - 7B  |     70.06     |     64.09     |   76.93  |   67.05   |   40.53   |
+|  Baichuan2 - 7B  |     72.25     |     67.17     |   77.26  |   72.98   |   42.15   |
+|     our model    |     79.98     |     73.59     |   83.13  |   80.13   |   55.94   |
+
 
 ## Timeline
 
