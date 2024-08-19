@@ -222,6 +222,7 @@ We test the performance of our model with [lm-evaluation-harness](https://github
 | internlm2.5 - 7b |     79.14     |      77.9     |   80.52  |   76.16   |   51.37   |
 |   Baichuan - 7B  |     70.06     |     64.09     |   76.93  |   67.05   |   40.53   |
 |  Baichuan2 - 7B  |     72.25     |     67.17     |   77.26  |   72.98   |   42.15   |
+|  DeepSeek - 7B   |     76.13     |     69.77     |   79.76  |   71.04   |   44.8    |
 |     our model    |     79.98     |     73.59     |   83.13  |   80.13   |   55.94   |
 
 
