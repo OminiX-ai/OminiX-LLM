@@ -242,25 +242,22 @@ print(sequences[0]['generated_text'])
 
 ## Evaluation 
 
-We test the performance of our model with [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness). The evaluation results on common datasets are shown below. More results will be released. 
+We test the performance of our model with [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness). The evaluation results on common datasets are shown below. We test on AI2 Reasoning Challenge (25-shot), HellaSwag (10-shot), MMLU (5-shot), and Winogrande (5-shot).
 
-|      models      | HellaSwag | WinoGrade  | PIQA  | Arc-e  | Arc-c  |
-|:----------------:|:-------------:|:-------------:|:--------:|:---------:|:---------:|
-|  Mistral7B v0.1  |     81.06     |     73.95     |   82.26  |   79.42   |   54.01   |
-|  Mistral7B v0.3  |     80.39     |      73.4     |   82.15  |   78.28   |   52.22   |
-|   LLaMA 2 - 7B   |     75.99     |     69.06     |   79.11  |   74.54   |   46.42   |
-|   LLaMA 3 - 8B   |      79.1     |      73.3     |   79.6   |   77.74   |   53.07   |
-|  LLaMA 3.1 - 8B  |     78.92     |     74.19     |   81.12  |   81.06   |   53.67   |
-|   Qwen v1 - 7B   |     76.86     |     68.59     |   78.29  |   71.76   |   46.08   |
-|  Qwen v1.5 - 7B  |     76.85     |      66.3     |   79.33  |   62.37   |   42.92   |
-|   Qwen v2 - 7B   |      78.9     |     72.38     |   79.98  |   74.71   |   50.09   |
-|    gemma - 7b    |     80.45     |     73.72     |   80.9   |   79.97   |    54.1   |
-|  internlm2 - 7b  |     79.27     |     78.77     |   80.09  |   78.07   |   53.07   |
-| internlm2.5 - 7b |     79.14     |      77.9     |   80.52  |   76.16   |   51.37   |
-|   Baichuan - 7B  |     70.06     |     64.09     |   76.93  |   67.05   |   40.53   |
-|  Baichuan2 - 7B  |     72.25     |     67.17     |   77.26  |   72.98   |   42.15   |
-|  DeepSeek - 7B   |     76.13     |     69.77     |   79.76  |   71.04   |   44.8    |
-|     our model    |     79.98     |     73.59     |   83.13  |   80.13   |   55.94   |
+|          model         | ARC-C | hellaswag |  mmlu | WinoGrade |  Ave  |
+|:----------------------:|:-----:|:---------:|:-----:|:---------:|:-----:|
+|    Mistral v0.1 - 7B   | 57.08 |   82.31   | 62.48 |   77.66   | 69.88 |
+|    Mistral v0.3 - 7B   | 57.59 |   83.25   | 62.42 |   78.77   | 70.51 |
+|     LLaMA 3.1 - 8B     | 54.61 |   81.95   | 65.16 |   77.35   | 69.77 |
+|      LLaMA 3 - 8B      | 55.46 |   82.09   | 65.29 |   77.82   | 70.17 |
+|      LLaMA 2 - 7B      | 49.74 |   78.94   | 45.89 |   74.27   | 62.21 |
+|       Qwen 2 - 7B      | 57.68 |   80.76   | 70.42 |   77.43   | 71.57 |
+|       gemma - 7b       | 56.48 |   82.31   | 63.02 |    78.3   | 70.03 |
+|    internlm2.5 - 7b    | 54.78 |    79.7   | 68.17 |    80.9   | 70.89 |
+|     Baichuan2 - 7B     | 47.87 |   73.89   | 54.13 |    70.8   | 61.67 |
+|        Yi-1.5-9B       | 58.36 |   80.36   | 69.54 |   77.53   | 71.48 |
+|  Moxin - 7B - original | 53.75 |   75.46   | 59.43 |   70.32   | 64.74 |
+| Moxin - 7B - finetuned | 59.47 |   83.08   | 60.97 |   78.69   | 70.55 |
 
 
 ## Timeline
