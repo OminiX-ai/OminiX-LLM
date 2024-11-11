@@ -91,7 +91,7 @@ It is a better method to load from disk as it does not require online data prepr
 
 
 ## Model
-You can download our efficient stable diffusion model from this [link](https://huggingface.co/piuzha/llm_ckpts). It is located on Huggingface with 'piuzha/llm_ckpts'.
+You can download our 7B model from this [link](https://huggingface.co/piuzha/OminiX-7b). It is located on Huggingface with 'piuzha/OminiX-7b'.
 
 
 ## Training
